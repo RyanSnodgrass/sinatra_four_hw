@@ -46,33 +46,18 @@
 
           <div class="inner cover">
 
-            <h1 class="cover-heading"><%= @course_to_show.name %></h1>
+            <h1 class="cover-heading"><%= @professor_to_show.name %></h1>
             <div class="row">
-              <div class="col-md-4">
-                <p class="lead">Class starting date</p>
-                <p><%= @course_to_show.start_date%></p>
-              </div>
-              <div class="col-md-4">
-                <p class="lead">Class ending date</p>
-                <p><%= @course_to_show.end_date%></p>
-              </div>
-              <div class="col-md-4">
-                <p class="lead">Required by the Major?</p>
-                <p><%= @course_to_show.major_required%></p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <p class="lead">Professor Name</p>
-                <p><%= @course_to_show.professor_id%></p>
-              </div>
-              <div class="col-md-6">
-                <p class="lead">Subject</p>
-                <p><%= @course_to_show.subject_id%></p>
-              </div>
-            </div>
-          </div>
-          <p>
+            <div class="col-md-6">
+	            <p class="lead">Professor's Age</p>
+	            <p><%= 	@professor_to_show.age%></p>
+	          </div>
+	          <div class="col-md-6">
+	            <p class="lead">Professor's Gender</p>
+	            <p><%= 	@professor_to_show.gender%></p>
+	          </div>
+      		</div>
+            <p>
               <a href="#" class="btn btn-lg btn-default">Update</a>
             </p>
           </div>
