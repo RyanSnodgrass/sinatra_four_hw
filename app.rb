@@ -19,6 +19,7 @@ get "/professors/index.erb" do
 end
 
 get "/subjects/index.erb" do
+	@subjects = Subject.all
  erb :"/subjects/index"
 end
 
