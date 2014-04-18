@@ -14,11 +14,17 @@ get "/courses/index.erb" do
 end
 
 get "/professors/index.erb" do
+	@professors = Professor.all
  erb :"/professors/index"
 end
 
 get "/subjects/index.erb" do
  erb :"/subjects/index"
+end
+
+get "/courses/:id/show.erb" do
+	#ruby commands with sql
+	erb :"/courses/show"
 end
 
 class Professor <ActiveRecord::Base
