@@ -9,6 +9,7 @@ get "/" do
 end
 		# "/courses/index"
 get "/courses/index.erb" do
+	@courses = Course.all
  erb :"/courses/index"
 end
 
