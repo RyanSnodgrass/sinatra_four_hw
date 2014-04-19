@@ -8,13 +8,14 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>List of Professsors</title>
+    <title>Narrow Jumbotron Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="http://getbootstrap.com/examples/justified-nav/justified-nav.css" rel="stylesheet">
+    <link href="/cover_texture.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -29,42 +30,46 @@
   <body>
 
     <div class="container">
-
-      <div class="masthead">
+      <div class="header">
+              <div class="masthead">
         <h3 class="text-muted">logged in as THE DEAN</h3>
         <ul class="nav nav-justified">
           <li><a href="/">Home</a></li>
           <li><a href="/courses/index.erb">Courses</a></li>
-          <li class="active"><a href="/professors/index.erb">Professors</a></li>
-          <li><a href="/subjects/index.erb">Subjects</a></li>
+          <li ><a href="/professors/index.erb">Professors</a></li>
+          <li class="active"><a href="/subjects/index.erb">Subjects</a></li>
         </ul>
       </div>
+      </div>
 
-      <!-- Jumbotron -->
       <div class="jumbotron">
-        <h1>University Professors</h1>
-        <p class="lead">As the DEAN of the University, you choose the professors.</p>
-        <p><a class="btn btn-lg btn-success" href="/professors/new.erb" role="button">Add a Professor</a></p>
-      </div>
-
-      <!-- Example row of columns -->
-      <div class="row">
-        <% @professors.each do |p| %>
-        <div class="col-lg-4">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title">Professor</h3>
-            </div>
-            <div class="panel-body">
-              <h5><%= p.name %></h5>
-              <p><a class="btn btn-primary" href="/professors/<%=p.id%>/show.erb" role="button">View details &raquo;</a></p>
-            </div>
-            </div>
+        <h1>Add a Professor</h1>
+        <p class="lead">Found a great professor? Add their name, gender, and age into the appropriate boxes.</p>
+        <form action="/professors/new" method="post">
+          <div class="form-group">
+            <input type="text" id="mov_name" name="professor_name"placeholder="Professor Name" class="form-control">
           </div>
-        <% end %>
+          <div class="form-group">
+            <input type="text" id="mov_name" name="professor_gender"placeholder="Professor Gender" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" id="mov_name" name="professor_age"placeholder="Professor age. Please only enter integers!" class="form-control">
+          </div>
+          <div class="form-group">
+          <input class="btn btn-default" type="submit" value="Submit">
+            <!-- <input type="textarea rows='4'" id="movie_name" placeholder="Movie Name" class="form-control"> -->
+          </div>
+          
+  <!--         <p><a class="btn btn-lg btn-success" href="#" role="button">Add Movie</a></p> -->
+      </form>
+
+        
       </div>
 
-      <!-- Site footer -->
+      <div class="row marketing">
+        
+      </div>
+
       <div class="footer">
         <p>&copy; Company 2014</p>
       </div>
