@@ -23,21 +23,34 @@ get "/subjects/index.erb" do
  erb :"/subjects/index"
 end
 
+#------------------------------------------------#
+get "/courses/new.erb" do # ---calls--- courses NEW page
+	erb :"/courses/new"
+end
+
+post "/subjects/new" do # ---COMPUTES--- courses NEW page
+	cors = Subject.new
+	cors.name = params[:subject_genre]
+	cors.building = params[:subject_building]
+	cors.save
+	redirect "/subjects/index.erb"
+end
+
+#------------------------------------------------#
+
 get "/courses/:id/show.erb" do # calls courses SHOW page
 	@course_to_show = Course.find(params[:id])
-	@prof_name = Professor.joins('INNER JOIN courses ON 
-	courses.professor_id = professors.id')
-	.where('courses.id = params[:id]')
+	#@prof_name = Professor.joins('INNER JOIN courses ON courses professor_id = professors.id').where('courses.id = params[:id]')
 	 
-	 #@this_prof_id = Course.find(params[:id]).professor_id
-	 #@prof_name = Professor.find(@this_prof_id).name
+	@this_prof_id = Course.find(params[:id]).professor_id
+	@prof_name = Professor.find(@this_prof_id).name
 
 	@this_subj_id = Course.find(params[:id]).subject_id
 	@subj_name = Subject.find(@this_subj_id).genre
 	
 	erb :"courses/show"
 end
-#Client.joins('LEFT OUTER JOIN addresses ON 
+#Client.joins('LEFT OUTER JOIN addresses ON v
 #	addresses.client_id = clients.id')
 
 #SELECT clients.* FROM clients 

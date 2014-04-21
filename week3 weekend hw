@@ -1,0 +1,78 @@
+-- finds whos teaching at millican hall
+
+sqlite> select professors.name from professors
+   ...> inner join courses on
+   ...> professors.id = courses.professor_id
+   ...> inner join subjects on
+   ...> courses.subject_id = subjects.id
+   ...> where subjects.building = "Millican Hall";
+Nutty
+
+
+-- finds all buildings being taught in and spits out multiple instances if same building is being used more than once
+
+sqlite> select subjects.building from subjects
+   ...> inner join courses on courses.subject_id
+   ...> = subjects.id;
+classroom 1
+classroom 2
+classroom 1
+Millican Hall
+visual arts
+visual arts
+
+-- finds all buildings being taught in and spits out multiple instances
+
+	sqlite> select subjects.building
+   ...> from courses inner join subjects on courses.subject_id =  subjects.id;
+classroom 1
+classroom 2
+classroom 1
+Millican Hall
+visual arts
+visual arts
+
+
+-- what building is Bill Nye teaching in
+
+sqlite> select subjects.building from subjects
+   ...> inner join courses on
+   ...> courses.subject_id = subjects.id
+   ...> inner join professors on
+   ...> professors.id = courses.professor_id
+   ...> where professors.name = "Bill Nye";
+classroom 2
+classroom 1
+
+
+
+
+
+select professors.name from professors
+inner join courses
+inner join subjects on
+courses.subject_id = subjects.id
+where subjects.building = "Millican Hall";
+
+select subjects.building
+
+
+=> ambiguous column name subjects.id
+
+
+-- what classes is bill nye teaching
+
+select professors.age from professors
+outer join professors on
+professors.id = courses.professor_id
+where courses.name = "english_comp";
+
+this_course_id = 3
+
+
+select name from professors 
+inner join courses on
+professors.id = courses.professor_id
+where courses.id = this_course_id; 
+
+

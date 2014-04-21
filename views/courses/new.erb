@@ -41,10 +41,23 @@
         </ul>
       </div>
       </div>
+      <div class="dropdown">
+  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+    <li role="presentation" class="divider"></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+  </ul>
+</div>
 
       <div class="jumbotron">
-        <h1>Add a Professor</h1>
-        <p class="lead">Found a great professor? Add their name, gender, and age into the appropriate boxes.</p>
+        <h1>Add a Course</h1>
+        <p class="lead">Students not working hard enough? School's GPA down? Add another course and crack that whip!</p>
         <form action="/professors/new" method="post">
           <div class="form-group">
             <input type="text" id="mov_name" name="professor_name"placeholder="Professor Name" class="form-control">
@@ -55,6 +68,19 @@
           <div class="form-group">
             <input type="text" id="mov_name" name="professor_age"placeholder="Professor age. Please only enter integers!" class="form-control">
           </div>
+          <div class="dropdown">
+  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+    <li role="presentation" class="divider"></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+  </ul>
+</div>
           <div class="form-group">
           <input class="btn btn-default" type="submit" value="Submit">
             <!-- <input type="textarea rows='4'" id="movie_name" placeholder="Movie Name" class="form-control"> -->
