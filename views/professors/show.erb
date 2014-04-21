@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 
-    <title>Cover Template for Bootstrap</title>
+    <title>Update Professors</title>
 
     <!-- Bootstrap core CSS -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -46,19 +46,19 @@
 
           <div class="inner cover">
 
-            <h1 class="cover-heading"><%= @professor_to_show.name %></h1>
+            <h4 class="cover-heading"><%= @professor_to_show.name %></h4>
             <div class="row">
             <div class="col-md-6">
-	            <p class="lead">Professor's Age</p>
+	            <h3>Professor's Age</h3>
 	            <p><%= 	@professor_to_show.age%></p>
 	          </div>
 	          <div class="col-md-6">
-	            <p class="lead">Professor's Gender</p>
+	            <h2>Professor's Gender</h2>
 	            <p><%= 	@professor_to_show.gender%></p>
 	          </div>
       		</div>
             <p>
-              <a href="#" class="btn btn-lg btn-default">Update</a>
+              <a href="/professors/<%= @professor_to_show.id %>/edit" class="btn btn-lg btn-default">Update</a>
             </p>
           </div>
 
